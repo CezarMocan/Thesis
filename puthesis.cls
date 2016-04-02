@@ -48,8 +48,8 @@
 %%   to be declared from within the document itself. 
 \newcommand*{\makefrontmatter}{
 \bodyspacing
-\frontmatter\maketitlepage\makecopyrightpage\makeabstract
-\makeacknowledgements\makededication\maketoc
+\frontmatter\maketitlepage\makecopyrightpage
+\makededication\makeacknowledgements\makeabstract\maketoc
 \makelot\clearpage\makelof\clearpage\makelos
 \clearpage\mainmatter
 }
@@ -62,31 +62,32 @@
 \def\dedication#1{\gdef\@dedication{#1}}
 \newcommand{\maketitlepage}{{
   \thispagestyle{empty}
-  \sc
   \vspace*{0in}
   \begin{center}
-    \LARGE \@title
+    \LARGE \sc \@title
   \end{center}
-  \vspace{.6in}
+  \vspace{1.7in}
   \extravspace{0.6in}
   \extravspace{0.6in}
   \extravspace{0.6in}
   \extravspace{0.6in}
+
+  \extravspace{.3in}
+  \begin{center}
+    \@author \\
+    \@submitted
+  \end{center}
+  \vspace{2.5in}
+  
   \begin{center}
     A Senior Thesis presented to the Faculty of the Woodrow Wilson School of Public \\ 
     and International Affairs in partial fulfillment of the requirements \\
     for the degree of Bachelor of Arts
   \end{center}
-  \vspace{.3in}
-  \extravspace{.3in}
-  \begin{center}
-    \@author
-  \end{center}
-  \begin{center}
-    \@submitted
-  \end{center}
+  
   \clearpage
   }}
+  
 \newcommand*{\makecopyrightpage}{
   \thispagestyle{empty}
   \vspace*{0in}
@@ -95,15 +96,18 @@
     All rights reserved.
   \end{center}
   \clearpage}
-\newcommand*{\makeabstract}{
-  \newpage
-  \addcontentsline{toc}{section}{Abstract}
-  \begin{center}
-  \Large \textbf{Abstract}
-  \end{center}
-  \@abstract
-  \clearpage
+  
+\def\makededication{
+  \ifx\@dedication\undefined
+  \else
+    \vspace*{1.5in}
+    \begin{flushright}
+      \@dedication
+    \end{flushright}
+    \clearpage
+  \fi
   }
+
 \def\makeacknowledgements{
   \ifx\@acknowledgements\undefined
   \else
@@ -121,15 +125,15 @@
     \clearpage
   \fi
   }
-\def\makededication{
-  \ifx\@dedication\undefined
-  \else
-    \vspace*{1.5in}
-    \begin{flushright}
-      \@dedication
-    \end{flushright}
-    \clearpage
-  \fi
+
+\newcommand*{\makeabstract}{
+  \newpage
+  \addcontentsline{toc}{section}{Abstract}
+  \begin{center}
+  \Large \textbf{Abstract}
+  \end{center}
+  \singlespacing \@abstract
+  \clearpage
   }
 \DeclareOption{los}{
   \renewcommand*{\makelos}{
@@ -180,6 +184,7 @@
 \long\def\abstract#1{\gdef\@abstract{#1}}
 %% 'begincmd' no longer used -- insert \makefrontmatter in the document instead. See above. 
 %\AtBeginDocument{\begincmd}
+
 \endinput
 %% 
 %% End of file `puthesis.cls'.
