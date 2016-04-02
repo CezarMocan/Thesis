@@ -1,5 +1,37 @@
 \chapter{Methodology\label{ch:methods}}
 
+\section{Dependent Variable Discussion}
+
+\section{The Probit Model}
+
 \begin{dmath}
-Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3ed\_versatility + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigrant + \beta_8ed_immigrant + \beta_9race + \beta_{10}marital\_status + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}industry\_t_1 + \beta_{14}state\_gdp_change + \beta_{15}unemployment + \beta_{16}gov\_party + \beta_{17}gov\_change + \beta_{18}region
+Y^{*}_{i} = x^{T}_i\beta + u_i = \beta_0 + \beta_1X_{i1} + \beta_2X_{i2} + ... + \beta_kX_{ik} + u_i
+\end{dmath}
+
+
+
+
+\begin{dmath}
+Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3ed\_versatility + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigrant + \beta_8ed*immigrant + \beta_9race + \beta_{10}marital\_status + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}industry\_t_1 + \beta_{14}state\_gdp_change + \beta_{15}unemployment + \beta_{16}gov\_party + \beta_{17}gov\_change + \beta_{18}region
+\end{dmath}
+
+
+\begin{dmath}
+\mbox{$Y_i = 1 \mbox{ if } Y^{*}_{i}>0$} \\
+\mbox{$Y_i = 0 \mbox{ if } Y^*_i\leq 0$}
+\end{dmath}
+
+\begin{dmath}
+\mbox{$Pr(Y_i = 1) = Pr(Y^2_i > 0) = Pr (x^T_i\beta + u_i) >0 $} \\
+\mbox{$Pr(Y_i = 0) = Pr(Y^2_i \leq 0) = Pr (x^T_i\beta + u_i) \leq 0 $}
+\end{dmath}
+
+\begin{dmath}
+\mbox{$Pr(Y_i = 1) = Pr(Y^2_i > 0) = \phi(x^T_i\beta) $} \\
+\mbox{$Pr(Y_i = 0) = Pr(Y^2_i \leq 0) = 1 - \phi(x^T_i\beta) $}
+\end{dmath}
+
+
+\begin{dmath}
+Pr(Y = 0 | Industry_i = 1) = 1
 \end{dmath}
