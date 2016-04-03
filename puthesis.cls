@@ -32,6 +32,7 @@
   \tableofcontents
   \clearpage
 }
+
 %% Setup a command to add extra space only if in singlespacing mode
 \newcommand*{\extravspace}[1]{\vspace{0in}}
 %% Setup a command to set spacing for body text; also used to restore spacing after long tables in document
@@ -132,7 +133,7 @@
   \begin{center}
   \Large \textbf{Abstract}
   \end{center}
-  \singlespacing \@abstract
+  \singlespacing \@abstract \bodyspacing
   \clearpage
   }
 \DeclareOption{los}{

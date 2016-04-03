@@ -16,6 +16,7 @@
 % Also see the "ifodd" command below to disable more frontmatter
 %\documentclass[12pt]{puthesis}
 
+\usepackage{titlesec}
 \usepackage{booktabs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
@@ -203,6 +204,12 @@ who made all of it possible.}
 % Generally, place citations before the period~\cite{anotherauthor}.
 % The proper usage for i.e., and e.g., include commas ``(e.g., option A, option B)''
 
+%%%% Chapter title styling:
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\huge}
+  
+\titlespacing*{\chapter}{0pt}{*1}{*5}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Import chapters
 
@@ -217,6 +224,7 @@ who made all of it possible.}
 \include{ch-data/ch-data}
 \include{ch-methodology/ch_methodology}
 \include{ch-results/ch-results}
+\include{ch-discussion/ch-discussion}
 \include{ch-robust/ch-robustness}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
