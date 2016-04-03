@@ -1,6 +1,7 @@
 \chapter{Methodology\label{ch:methods}}
 
-\section{Dependent Variable Discussion}
+
+\section {Dependent Variable Discussion}
 
 The current study builds on previous literature and analyzes the factors that motivate or deter men and women to be self-employed. The Kauffman Index of Entrepreneurial Activity is used as an alternative measure for entrepreneurship, along with a comprehensive set of controls from the Current Population Survey, the National Governors' Association,  Angel Capital Association and US Bureau of Economic Analysis\footnote{The events in mind are the dot.com bubble of the early 2000s, along with the Great Recession of 2008.}. The size $N = 9,244,390$ of this constructed dataset makes it nationally representative, and its reach over the 1998-2014 period covering two great shocks on the U.S. economy, makes it temporally comprehensive. By virtue of our data and in line with existing literature, one can compute at least two different econometric models of occupational choice, with dependent variables as delineated in Parker (2004): 
 \begin{enumerate}
@@ -90,6 +91,13 @@ Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3ed\_versatili
 
 A complete set of controls is provided in Table [...], along with relevant descriptions. The probability of entry is modeled using five categories of covariates that we hypothesize influence an agent's decision to start their own business. These are Liquidity constraints, Demographic controls, Job Characteristics, Policy Environment and Location variables. In light of existing literature and with intuitions about where our research can bring further contributions, we frame hypotheses for their effects and underlying mechanisms.
 
+\begin{figure}[hbtp]
+	    \centering{%
+		    \includegraphics[width=0.75\linewidth]{ch-methodology/image001.png}%
+       	}%
+        \caption{Hypotheses across Covariates of Interest}  
+\end{figure}
+
 \subsection{Dependent Variable}
 
 The probability of becoming an entrepreneur $p_{entry}$ is estimated for each individual as the change to self-employment in the second survey month ($t_1$) after conditioned on not being self-employed in the first one ($t_0$). The sample mean is around 0.5\%, with a slight decrease in the yearly average for the period after 2008. 
@@ -103,8 +111,8 @@ The probability of becoming an entrepreneur $p_{entry}$ is estimated for each in
 \textbf{Skill versatility.} We compute versatility ($skill\_vers$) as a binary for whether the respondent changed industry in the given year, instrumented on educational attainment. Given the literature, a higher degree of skill versatility should lead to positive effects on the self-employment rate, with differences to be analyzed across genders. If women experience more rigid labor markets, and might pursue less marketable courses of study at the same level of educational attainment, they would have possibilities for industry change. As a result, we expect to observe a coefficient that is smaller in magnitude in their case. 
 
 \textbf{Marriage.}  Marital status ($i.marstat$) is a categorical variable, with the differentiated labels:
-\begin{singlespace}
 \begin{enumerate}
+\singlespacing
 \item Married, spouse present
 \item Married, spouse in armed forces
 \item Married, spouse absent
@@ -112,7 +120,6 @@ The probability of becoming an entrepreneur $p_{entry}$ is estimated for each in
 \item Divorced
 \item Never married
 \end{enumerate}
-\end{singlespace}
 
 Household characteristics are expected to play a large role in one's motivations to start a business, with literature predicting both genders being positively incentivized by being married. 
 
@@ -141,20 +148,20 @@ Workers could turn to self-employment because of its associated non-monetary ben
 
 \textbf{Tax incentives.} Tax credits are measured by a binary ($tax\_credit$) indicating the existence of a tax break on new business investment in the respondent's state in the given year. We are interested in how these credits incentivize business formation, and whether asymmetric effects exist for men and women. We hypothesize the coefficient is positive, and that it might vary across groups.
 
-\textbf{Local governance.} The \textit{partisanship of the current governor} ($rep\_gov$, $dem\_gov$ and $indep_gov$) is added to asses whether men and women respond differently to political factors in deciding to pursue self-employment at a given time. Particular types of economic policies - small business loans, the willingness to implement tax breaks, programs that engage women and minorities, etc - might be more closely associated with a political ideology than the other, and could affect the incentives of people wanting to open a business. 
+\textbf{Local governance.} The partisanship of the current governor ($rep\_gov$, $dem\_gov$ and $indep_gov$) is added to asses whether men and women respond differently to political factors in deciding to pursue self-employment at a given time. Particular types of economic policies - small business loans, the willingness to implement tax breaks, programs that engage women and minorities, etc - might be more closely associated with a political ideology than the other, and could affect the incentives of people wanting to open a business. 
 
-3. At the same time, a binary for party change in state level governance ($gov\_change$) has been computed, testing whether partisanship shifts provide cues for new programs and incentives. If this is the case, a positive coefficient might indicate there are new motivations associated with a change in political landscape, and there is an interest to assess whether men and women take such cues differently. 
+At the same time, a binary for party change in state level governance ($gov\_change$) has been computed, testing whether partisanship shifts provide cues for new programs and incentives. If this is the case, a positive coefficient might indicate there are new motivations associated with a change in political landscape, and there is an interest to assess whether men and women take such cues differently. 
 
 
 \subsection{Macroeconomic Conditions}
 
-1. The coefficient on \textit{state GDP change} ($gdp\_change$) from the past year measures the extent to which an individual's likelihood to start a business might respond to periods of economic upturn or downturn. This effect is complex, encompassing both a sense of real economic conditions affecting one's labor market prospects, as well as the degree to which they are assimilated by respondents into the decision to start a business. \\
+\textbf{State GDP} The coefficient on state GDP change ($gdp\_change$) from the past year measures the extent to which an individual's likelihood to start a business might respond to periods of economic upturn or downturn. This effect is complex, encompassing both a sense of real economic conditions affecting one's labor market prospects, as well as the degree to which they are assimilated by respondents into the decision to start a business.
 
-2. We compute an \textit{interaction term of education and economic prospects} ($ed_econ$), hoping to provide an intuition for an agent's demand for wage labor at a given time. As such, a negative coefficient on this interaction term would indicate that in times of economic upturn, high skill is rewarded more by wage employment. In times of downturn, there might be more incentives to join self-employment. The extent to which this effect varies for men and women speaks to both individual incentives, as well as how the U.S. labor market values work and skill level across genders. 
+\textbf{Education and Economic Performance} We compute an interaction term of education and local economic prospects ($ed\_econ$), hoping to provide an intuition for an agent's demand for wage labor at a given time. As such, a negative coefficient on this interaction term would indicate that in times of economic upturn, high skill is rewarded more by wage employment. In times of downturn, there might be more incentives to join self-employment. The extent to which this effect varies for men and women speaks to both individual incentives, as well as how the U.S. labor market values work and skill level across genders. 
 
-3. The \textit{state unemployment rate} ($unem\_rate$) is measure for the current year, the previous year and the change between periods. We expect a negative coefficient on unemployment, as periods of economic downturn fail to provide the necessary incentives for individuals to take the risks associated with business formation. Differences in gender might be due to different manifestations of risk aversion, as well as labor prospects in times of high unemployment. 
+\textbf{State Unemployment} The state unemployment rate ($unem\_rate$) is measure for the current year, the previous year and the change between periods. We expect a negative coefficient on unemployment, as periods of economic downturn fail to provide the necessary incentives for individuals to take the risks associated with business formation. Differences in gender might be due to different manifestations of risk aversion, as well as labor prospects in times of high unemployment. \\
 
-
+We cluster errors on \textbf{metropolitan area}, and use states as controls that speak to the spatial concentration of business formation. Given that location data is categorical in nature, we expect certain states to be more influential than others, with those overlapping with historically innovative regions such as Silicon Valley or Route 128 to result in positive coefficients, while others negatively contributing to entry probability. When used to model entry rates, these variables might also capture up-and-coming entrepreneurship hubs, as opposed to established innovation clusters. 
 
 
 

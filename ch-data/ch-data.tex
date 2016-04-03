@@ -22,24 +22,30 @@ We add economic indicators and political controls to the Kauffman Index microdat
 }. In calculating this rate, subjects are classified as unemployed if they:
 \renewcommand{\labelenumi}{\roman{enumi}}
 \begin{enumerate}
-   \item are part of the labor force,
-   \item do not have a job, and
-\item have actively looked for one in the previous four weeks (U.S. Bureau of Labor Statistic). 
+    \singlespacing
+    \item are part of the labor force,
+    \item do not have a job, and
+    \item have actively looked for one in the previous four weeks (U.S. Bureau of Labor Statistic). 
+    
 \end{enumerate}
+
 
 For every observation in the Kauffman data, the unemployment rate for the previous year was also computed using state-matching, with an extra variable generated to capture changes in unemployment from $year_{i-1}$ to $year_{i}$. 
 
 \textbf{Partisanship.} We added the party affiliation of the current governor for every individual observation according to state of residence and given year, using historical data from the National Governor’s Association (NGA)\footnote{The National Governors Association (NGA) is a bipartisan organization for U.S. governors, providing policy research assistance and other services. NGA also holds detailed historical records of U.S. state governance, used for the purpose of our analysis.}. The categories were 
-\begin{singlespace}
+
 \renewcommand{\labelenumi}{\roman{enumi}}
 \begin{enumerate}
+\singlespacing
 \item Democrat, $dem\_gov$
 \item Republican, $rep\_gov$  
 \item Independent, $indep\_gov$.
 \end{enumerate}
-\end{singlespace}
+
 A variable $gov\_change$ designating partisanship change was computed to capture the years where a switch from one label to the other occurred in a given state. 
 
-\textbf{Tax Credits.} We completed the set of control variables with the addition of tax credit data from the Matrix of States with Angel tax Credit Programs developed by the Connecticut Technology Council (Nwosu 2010). This source measures whether a given state benefited from a tax credit program for investors funding new companies in a given year, and were matched to individual observations in the Kauffman data. A proxy for local policy measures that facilitate entrepreneurship, the presence of tax credits is heterogeneous at the U.S. level, with summary statistic indicating only twenty states are pursuing active steps to encourage private investment in new firms (Nwosu, 2010). Some of the ones that do, as in the case of New York, Maine or North Dakota have been pursuing this type of policy for at least a decade, while others like Wisconsin or Kentucky only allow it for a given period or funding amount (Nwosu 2010). 
+\textbf{Tax Credits.} We completed the set of control variables with the addition of tax credit data from the Matrix of States with Angel tax Credit Programs developed by the Connecticut Technology Council (Nwosu 2010). This source measures whether a given state benefited from a tax credit program for investors funding new companies in a given year, and were matched to individual observations in the Kauffman data.
+
+A proxy for local policy measures that facilitate entrepreneurship, the presence of tax credits is heterogeneous at the U.S. level, with summary statistic indicating only twenty states are pursuing active steps to encourage private investment in new firms (Nwosu, 2010). Some of the ones that do, as in the case of New York, Maine or North Dakota have been pursuing this type of policy for at least a decade, while others like Wisconsin or Kentucky only allow it for a given period or funding amount (Nwosu 2010). 
 
 

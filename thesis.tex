@@ -15,7 +15,7 @@
 %%% For early drafts without some of the frontmatter
 % Also see the "ifodd" command below to disable more frontmatter
 %\documentclass[12pt]{puthesis}
-
+%\usepackage[letterpaper]{geometry}
 \usepackage{titlesec}
 \usepackage{booktabs}
 
@@ -207,7 +207,6 @@ who made all of it possible.}
 %%%% Chapter title styling:
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{}{0pt}{\huge}
-  
 \titlespacing*{\chapter}{0pt}{*1}{*5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -225,7 +224,6 @@ who made all of it possible.}
 \include{ch-methodology/ch_methodology}
 \include{ch-results/ch-results}
 \include{ch-discussion/ch-discussion}
-\include{ch-robust/ch-robustness}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
 \include{ch-appendix/descriptive}

@@ -13,6 +13,7 @@
 \def\@copyrightyear{\number\year}
 \def\adviser#1{\gdef\@adviser{#1}}
 \long\def\@abstract{\@latex@error{No \noexpand\abstract given}\@ehc}
+
 \newcommand*{\frontmatter}{
   \pagenumbering{roman}
   }
