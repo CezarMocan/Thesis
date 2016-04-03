@@ -31,3 +31,51 @@ Urban & \$7.76B & 77\% & \$3.91B & 83\% & \$5B & 86\% & \$4.78B & 83\% & \$6B & 
 \multicolumn{11}{l}{\footnotesize Source: Small Business Administration}\\
 \end{tabular}
 \end{table}
+
+
+\tablespacing
+\small
+\begin{longtable}{p{2 cm} p{2 cm} p{7 cm}}
+\caption{Variables in our dataset}
+\centering
+\hline\hline
+\toprule
+\multicolumn{1}{c}{\textbf{Variable}} & \multicolumn{1}{c}{\textbf{Type}} & \multicolumn{1}{c}{\textbf{Description}} \\ \midrule
+$se15\_t_0$ & Binary & \begin{tabular}[c]{@{}l@{}}Binary on whether an individual was\\ self-employed with 15 or more hours \\ worked at first survey time\end{tabular} \\
+$se15\_t_1$ & Binary & \begin{tabular}[c]{@{}l@{}}Binary on whether an individual was \\ self-employed with 15 or more hours \\ worked at second survey time\end{tabular} \\
+\multicolumn{3}{l}{\textit{\textbf{Dependent Variables}}} \\
+entry & Binary & \begin{tabular}[c]{@{}l@{}}Binary variable for observed \\entrepreneurship   entry, as the \\ transition from se15 = 0 \\ to se15\_t1 = 1\end{tabular} \\
+exit & Binary & \begin{tabular}[c]{@{}l@{}}Binary variable for observed \\ entrepreneurship   exit, as the \\ transition from se15 = 1 \\ to se15\_t1 = 0\end{tabular} \\
+\multicolumn{3}{l}{\textit{\textbf{Liquidity Constraints}}} \\
+fam\_income & \begin{tabular}[c]{@{}l@{}}Numeric \\ ($0-$150,000)\end{tabular} & Family income at first survey time \\
+mar\_income & Numeric & \begin{tabular}[c]{@{}l@{}}Interaction term of family income and\\ marital status, where the latter was \\ aggregated to a binary.\end{tabular} \\
+\multicolumn{3}{l}{\textit{\textbf{Demographic Controls}}} \\
+ed\_years & Numeric & \begin{tabular}[c]{@{}l@{}}Years of education, ranging from \\ none to  post-graduate studies.\end{tabular} \\
+ed\_immigr & Numeric & \begin{tabular}[c]{@{}l@{}}Interaction term of years of education \\and   immigrant status.\end{tabular} \\
+ed\_econ & Numeric & \begin{tabular}[c]{@{}l@{}}Interaction term of years of education \\ and state GDP change from previous \\year.\end{tabular} \\
+skill\_vers & Numeric & \begin{tabular}[c]{@{}l@{}}Interaction term of years of education \\ and a binary on industry change.\end{tabular} \\
+mar\_stat & Categorical (1-7) & \begin{tabular}[c]{@{}l@{}}Demographic variable designating \\ marital status, with variations beyond \\ the married/unmarried binary.\end{tabular} \\
+age & Numeric (\textgreater20) & \begin{tabular}[c]{@{}l@{}}Age of individual, with a nationally \\ representative sample of adults.\end{tabular} \\
+female & Binary & \begin{tabular}[c]{@{}l@{}}Gender variable, implemented as a \\ binary for being female.\end{tabular} \\
+race & Categorical (1-5) & \begin{tabular}[c]{@{}l@{}}Race variable, recorded with five major\\ categories: white, black, asian, hispanic, \\other.\end{tabular} \\
+immigr & Binary & \begin{tabular}[c]{@{}l@{}}Indication of whether individual is \\ currently holding immigrant status.\end{tabular} \\
+country & Categorical & Indication of individual's country of \\ origin. \\
+\multicolumn{3}{l}{\textit{\textbf{Employment Characteristics}}} \\
+ind & Categorical (1-7) & \begin{tabular}[c]{@{}l@{}}Major industry of main job, recorded at \\ survey times t0 and t1.\end{tabular} \\
+hours & Numeric (1-99) & \begin{tabular}[c]{@{}l@{}}Hours worked per week at current job, \\ recorded at survey time t0 and t1\end{tabular} \\
+less\_hours & Binary & \begin{tabular}[c]{@{}l@{}}Binary variable for more or less hours \\worked with the transition from t0 to t1S\end{tabular} \\
+unem & Binary & \begin{tabular}[c]{@{}l@{}}An agent's unemployment status at first \\ survey time. A measure of necessity/\\opportunity entrepreneurship.\end{tabular} \\
+\multicolumn{3}{l}{\textit{\textbf{Policy Environment}}} \\
+tax\_credit & Binary & \begin{tabular}[c]{@{}l@{}}Measure of whether an individual's \\ state of residence benefited from a tax \\ credit for investments in \\ new companies in the given year.\end{tabular} \\
+gov\_party & Categorical & \begin{tabular}[c]{@{}l@{}}The party affiliation of the governor for an\\   agent's state of residence in a given year.\end{tabular} \\
+gov\_change & Binary & \begin{tabular}[c]{@{}l@{}}Indicator for change in state level governance\\   (partisanship of governor) in the given year.\end{tabular} \\
+\multicolumn{3}{l}{\textit{\textbf{Location}}} \\
+region & Categorical (1-5) & \begin{tabular}[c]{@{}l@{}}General region indicator, with 5 categories:\\ Northeast, Midwest, South, West\end{tabular} \\
+state & Categorical (1-51) & Individual's state of residence. \\
+metro & Categorical & Agent's metropolitan area. \\
+\multicolumn{3}{l}{\textit{\textbf{Economic Conditions}}} \\
+gdp\_change & Numeric & \begin{tabular}[c]{@{}l@{}}Difference in State GDP recorded \\ from past year to current year as an \\ indicator of economic upturn/downturn.\end{tabular} \\
+unem\_i & Numeric & \begin{tabular}[c]{@{}l@{}}State level variable computing the average\\   unemployment rate for the given year.\end{tabular} \\
+unem\_\{i-1\} & Numeric & \begin{tabular}[c]{@{}l@{}}State level variable computing the average\\   unemployment rate for the previous year.\end{tabular} \\
+unem\_change & Numeric & \begin{tabular}[c]{@{}l@{}}State level variable measuring the difference \\ between the current year's  unemployment \\rate and that of the previous  year.\end{tabular} \\ \bottomrule
+\end{longtable}
