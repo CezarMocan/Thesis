@@ -18,6 +18,27 @@
   \pagenumbering{roman}
   }
 \newcommand*{\mainmatter}{\pagenumbering{arabic}}
+
+\newcommand*{\makehonorcodepage}{
+  \cleardoublepage
+  \ifdefined\phantomsection
+    \phantomsection  % makes hyperref recognize this section properly for pdf link
+  \else
+  \fi
+  \addcontentsline{toc}{chapter}{Honor Code}
+
+  \newpage
+  \vspace*{0in}
+  \begin{center}
+    \Large \textbf{Honor Code}
+  \end{center}
+  \vspace*{.3in}
+  \begin{center}
+     This thesis represents my own work in accordance with University Regulations. \\
+  \end{center}
+  \clearpage
+}
+
 \newcommand*{\makelot}{}
 \newcommand*{\makelof}{}
 \newcommand*{\makelos}{}
@@ -137,17 +158,6 @@
   \@abstract
   \clearpage
   }
-  
-\newcommand*{\makehonorcodepage}{
-  \thispagestyle{empty}
-  \vspace*{0in}
-  \begin{center}
-    A B and C decided to have a threesome. \\
-    All rights reserved.
-  \end{center}
-  \clearpage
-}
-
 
 \DeclareOption{los}{
   \renewcommand*{\makelos}{
