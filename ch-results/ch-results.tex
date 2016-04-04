@@ -2,10 +2,14 @@
 
 Table B.1 shows estimates for models (1), (2) and (3) implemented via the probit specification. Significant coefficients for demographic variables, economic conditions, as well as industry effects were reported for different levels of $\alpha$. The total probit model estimates a negative coefficient $\beta_{female} = -0.204$, statistically significant at the $\alpha = 1\%$ level and among the biggest in magnitude across covariates. This proves the need to investigate how the probability to enter entrepreneurship differs for men and women, and what factors matter for each group.
 
-
-
-
 \section{Demographic variables}
+
+\begin{figure}[hbtp]
+	  \centering{%
+		  \includegraphics[width=1\linewidth]{ch-results/individual.png}%
+    	}%
+    \caption{Magnitude of Significant Coefficients for Individual Level Variables} 
+\end{figure}
 
 \subsection{Education}
 
@@ -45,18 +49,25 @@ Past employment characteristics are a telling covariate, with negative coefficie
 
 Lifestyle changes vary in their power to incentivize business formation among men and women. The coefficient measuring the difference in hours between survey times denotes that among men, self-employment is positively affected by the promise of less hours worked ($\beta_{less\_hours} = 0.128$). For women, this is not the case, with $\beta_{less\_hours} = 0.128$. The prospect of working less has a negative impact on women’s decision about business entry, a significantly different effect from their male counterparts. Contrary to expectations, the signs for these coefficients are not altered by marriage status, with no statistical significance for the associated interaction terms. 
 
-Results also show consistent patterns of gender division across industries, with fields more traditionally occupied by men remaining prominent choices for new businesses for this group ( $\beta_{Data} = 0.967$, $\beta_{Software} = 1.259$ or $\beta_{0.891} = 0.967$). All the while, female self-employment is more positively incentivized by industries traditionally avoided by men, as indicated by $\beta_{Apparel} = 0.967$ or $\beta_{Accounting} = 1.575$.
-
 \begin{figure}[hbtp]
-	    \centering{%
-		    \includegraphics[width=0.75\linewidth]{ch-results/image015.png}%
-       	}%
-        \caption{Industry Determinants}  
+	  \centering{%
+		  \includegraphics[width=1\linewidth]{ch-results/industry.png}%
+    	}%
+    \caption{Magnitude of Significant Industry Coefficients by Gender} 
 \end{figure}
+
+Results also show consistent patterns of gender division across industries, with fields more traditionally occupied by men remaining prominent choices for new businesses for this group ( $\beta_{Data} = 0.967$, $\beta_{Software} = 1.259$ or $\beta_{0.891} = 0.967$). All the while, female self-employment is more positively incentivized by industries traditionally avoided by men, as indicated by $\beta_{Apparel} = 0.967$ or $\beta_{Accounting} = 1.575$.
 
 \section{Macroeconomic Conditions}
 
 Unemployment is a significant indicator of how local economic conditions affect self-employment rates, with negative coefficients $\beta_{unemployment} = -0.0113$ for women and $\beta_{unemployment} = -0.00514$ for men. Although of the same sign, these values are found to differ in magnitude at the $\alpha = 1\% $ significance level, women being less likely to start a business when there is a high unemployment rate in their respective state. 
+
+\begin{figure}[hbtp]
+	  \centering{%
+		  \includegraphics[width=0.85\linewidth]{ch-results/external.png}%
+    	}%
+    \caption{Magnitude of Significant Coefficients for External Factors} 
+\end{figure}
 
 \section{Policy Climate}
 Tax incentives for starting a business also show more significant responsiveness in the sample of female respondents, with  $\beta_{tax\_credit} = 0.0021$. For men, this coefficient is negative, $\beta_{tax\_credit} = -0.0131$, pointing to a reverse effect of tax credit on business formation. Instead of contributing to the likelihood of business formation, tax credits are estimated to have a negative effect for the male sample. This difference is significant at at the $\alpha = 1\% $ level. 

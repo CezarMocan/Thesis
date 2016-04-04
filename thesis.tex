@@ -18,6 +18,9 @@
 %\usepackage[letterpaper]{geometry}
 \usepackage{titlesec}
 \usepackage{booktabs}
+%for rotating figure purposes
+\usepackage{rotating}
+\usepackage{tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
 %%%% Author & title page info
@@ -183,7 +186,8 @@
 
 \else
 
-\dedication{To my mother.}
+\dedication{To my mother, \\
+who made all of it possible.}
 
 \acknowledgements{
 %I would like to thank...
@@ -205,8 +209,19 @@
 
 %%%% Chapter title styling:
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\huge}
+  {\normalfont\bfseries}{}{0pt}{\LARGE}
 \titlespacing*{\chapter}{0pt}{*1}{*5}
+
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Import chapters
