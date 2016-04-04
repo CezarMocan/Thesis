@@ -56,6 +56,24 @@ Probit models represent binomial probabilities in terms of the standard normal a
 
 The probit link function can thus be written as the inverse Gaussian cumulative distribution function, and is estimated using a standard maximum likelihood process\footnote{\cite{AldrichNelson1984}}. In a probit model, the estimate term $X\beta$ corresponds to the z-value of a normal distribution. Higher values of the estimates thus make the event more likely to happen under the given conditions. The data is expected to fit better than in a linear probability estimation, and is guaranteed to lie between 0 and 1. 
 
+\section{Model}
+
+We implement the probit method for three different models of entry probability, one addressing the dataset in the aggregate, and the other two focusing on the female and male samples. The first model (4.6) includes the covariate for gender, while the following two, (4.7) and (4.8) do not.
+
+
+\begin{dmath}
+Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3skill\_vers + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigr + \beta_8ed*immigr + \beta_9race + \beta_{10}mar\_stat + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}ind\_t_1 + \beta_{14}gdp\_change + \beta_{15}ed*gdp\_change + \beta_{16}unem + \beta_{17}unem\_rate + \beta_{18}gov\_party + \beta_{19}gov\_change + \beta_{20}region
+\end{dmath}
+
+
+\begin{dmath}
+Y^{*}_{entry\_f} = \beta_0 + \beta1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change +\beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
+\end{dmath}
+
+\begin{dmath}
+Y^{*}_{entry\_m} = \beta_0 + \beta_1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change + \beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
+\end{dmath}
+
 \section{Clustered Standard Errors}
 
 We suspect observations within the same metropolitan area are correlated, as specific entrepreneurship patterns might exist at this level of granularity. To combat this problem, we implement probit models with clustered standard errors on the metropolitan area variable. A method for modeling error components, clustering maintains the assumption of zero correlation across groups, but allows for within-group correlation. We thus move from the assumption that errors are independent and identically distributed to that of observations within a city being correlated in some way, and their errors clustered.
@@ -80,30 +98,14 @@ In the Probit model, one unit change in X translates to a $\beta$ change in the 
 
 \section{Differential effects}
 
-To test whether gender is associated with a difference in the determinants of entrepreneurship entry, we use an F-test of linear restrictions. In this case, we test whether the coefficients for men and women are significantly different from each other in a regression model with interaction terms for being male or female. For each covariate of interest, the null hypothesis is $$H_0 : \beta_{2} − \beta_{1} = 0$$ or, equivalently, $$H_0 : \beta_2 = \beta_1.$$ Knowing the scale of an independent variable affects the size of its coefficient, it is important to note that the regressors corresponding to the coefficients tested are on the same scale. 
+To test whether gender is associated with a difference in the determinants of entrepreneurship entry, we use an F-test of linear restrictions. In this case, we test whether the coefficients for men and women are significantly different from each other in a regression model with interaction terms for being male or female. For each covariate of interest, the null hypothesis is $$H_0 : \beta_{2} - \beta_{1} = 0$$ or, equivalently, $$H_0 : \beta_2 = \beta_1.$$ Knowing the scale of an independent variable affects the size of its coefficient, it is important to note that the regressors corresponding to the coefficients tested are on the same scale. 
 
 
-\section{Model}
 
-We implement the probit method for three different models of entry probability, one addressing the dataset in the aggregate, and the other two focusing on the female and male samples. The first model (4.6) includes the covariate for gender, while the following two, (4.7) and (4.8) do not.
-
-
-\begin{dmath}
-Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3skill\_vers + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigr + \beta_8ed*immigr + \beta_9race + \beta_{10}mar\_stat + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}ind\_t_1 + \beta_{14}gdp\_change + \beta_{15}ed*gdp\_change + \beta_{16}unem + \beta_{17}unem\_rate + \beta_{18}gov\_party + \beta_{19}gov\_change + \beta_{20}region
-\end{dmath}
-
-
-\begin{dmath}
-Y^{*}_{entry\_f} = \beta_0 + \beta1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change +\beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
-\end{dmath}
-
-\begin{dmath}
-Y^{*}_{entry\_m} = \beta_0 + \beta_1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change + \beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
-\end{dmath}
 
 \section{Variables and Expectations}
 
-A complete set of controls is provided in Table A.2 [Descriptive Statistics], along with relevant descriptions. The probability of entry is modeled using five categories of covariates that we hypothesize influence an agent's decision to start their own business. These are Liquidity constraints, Demographic controls, Job Characteristics, Policy Environment and Location variables. In light of existing literature and with intuitions about where our research can bring further contributions, we frame hypotheses for their effects and underlying mechanisms.
+A complete set of controls is provided in Table A.2 [Descriptive Statistics], along with relevant descriptions. The probability of entry is modeled using five categories of covariates that we hypothesize influence an agent's decision to start their own business. 
 
 \begin{figure}[hbtp]
 	    \centering{%
@@ -112,9 +114,14 @@ A complete set of controls is provided in Table A.2 [Descriptive Statistics], al
         \caption{Hypotheses across Covariates of Interest}  
 \end{figure}
 
+These are Liquidity constraints, Demographic controls, Job Characteristics, Policy Environment and Location variables. In light of existing literature and with intuitions about where our research can bring further contributions, we frame hypotheses for their effects and underlying mechanisms. Figure 4.1 illustrates our expectations schematically, labeling coefficients by sign and relative magnitude. The scale is for graphing purposes and does not speak to actual estimates.
+
+
 \subsection{Dependent Variable}
 
 The probability of becoming an entrepreneur $p_{entry}$ is estimated for each individual as the change to self-employment in the second survey month ($t_1$) after conditioned on not being self-employed in the first one ($t_0$). The sample mean is around 0.5\%, with a slight decrease in the yearly average for the period after 2008. 
+
+
 
 \subsection{Individual-level variables}
 
@@ -139,7 +146,14 @@ Household characteristics are expected to play a large role in one's motivations
 
 \textbf{Marriage and Finances.} We compute an interaction term $mar\_income$ to test whether marriage status influences the way people value financial stability in their choice to open a business. For this purpose, a binary for marriage was created, aggregating the six categories to only two values. If marriage is indeed a positive influence on the motivation to start a business, then this interaction should have a positive effect, denoting that the more liquidity couples dispose of, the greater their likelihood of business formation. 
 
-\textbf{Age.} We expect age to be a push factor for entry decisions, with a threshold suspected for positive effects. We fit a quadratic term for the coefficients on age, and expect to see an upside down parabola with different degrees of steepness for men and women. According to this hypothesis, individuals are more likely to become self-employed as they are becoming older and getting closer to a certain age, after which the curve slopes downward. If confirmed by coefficient estimates, this finding could nuance the discussion of aggregate age effects. 
+\textbf{Age.} We expect age to be a push factor for entry decisions, with a threshold suspected for positive effects. We fit a quadratic term for the coefficients on age, and expect to see an upside down parabola with different degrees of steepness for men and women [Figure 4.2]. According to this hypothesis, individuals are more likely to become self-employed as they are becoming older and getting closer to a certain age, after which the curve slopes downward. If confirmed by coefficient estimates, this finding could nuance the discussion of aggregate age effects. 
+
+\begin{figure}[hbtp]
+	  \centering{%
+		  \includegraphics[width=0.6\linewidth]{ch-methodology/concavedown.png}%
+    	}%
+    \caption{Schematic Representation of Expected Age Effects} 
+\end{figure}
 
 \textbf{Race.} Membership to a minority group ($i.race$) is computed as a categorical variable, with coefficients indicating whether deterrents exist for particular groups. We expect being Black or Hispanic to present negative estimates for the effect on self-employment, with coefficients smaller in magnitude for the female sample. This is predicted due to more barriers associated with being a man in these racial groups. The coefficient on being Asian is expected to produce a positive effect on the self-employment rate, with interest in whether there is a differential on gender. 
 

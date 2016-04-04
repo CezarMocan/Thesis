@@ -1,6 +1,6 @@
 \chapter{Results\label{ch:results}}
 
-Table B.1 shows estimates for models (1), (2) and (3) implemented via the probit specification. Significant coefficients for demographic variables, economic conditions, as well as industry effects were reported for different levels of $\alpha$. The total probit model estimates a negative coefficient $\beta_{female} = -0.204$, statistically significant at the $\alpha = 1\%$ level and among the biggest in magnitude across covariates. This proves the need to investigate how the probability to enter entrepreneurship differs for men and women, and what factors matter for each group.
+Table B.1 shows estimates for models (4.6), (4.7) and (4.8) implemented via the probit specification. Significant coefficients for demographic variables, economic conditions, as well as industry effects were reported for different levels of $\alpha$. The total probit model estimates a negative coefficient $\beta_{female} = -0.204$, statistically significant at the $\alpha = 1\%$ level and among the biggest in magnitude across covariates. This proves the need to investigate how the probability to enter entrepreneurship differs for men and women, and what factors matter for each group.
 
 \section{Demographic variables}
 
@@ -23,11 +23,11 @@ Education also factors in when interacted with GDP change at the state level, ca
 
 \subsection{Skill Versatility}
 
-An arguably related measure, an individual’s skill versatility has a significant positive effect on the likelihood of self-employment. To this regard, the coefficients are $\beta_{change} = 1.165$ for women and $\beta_{change} = 1.271$ for men, indicating a greater degree of flexibility leads to a higher probability of self-employment. The estimates are not significantly different across genders, pointing to a robust effect of the covariate. 
+An arguably related measure, an individual’s skill versatility has a significant positive effect on the likelihood of self-employment, with the greatest magnitude among the covariates in Figure 5.1. To this regard, the coefficients are $\beta_{change} = 1.165$ for women and $\beta_{change} = 1.271$ for men, indicating a greater degree of flexibility leads to a higher probability of self-employment. The estimates are not significantly different across genders, and are in line with the results for the general sample, pointing to a robust effect of this factor on self-employment entry. 
 
 \subsection{Age}
 
-The coefficients on age describe a concave quadratic function, with $\beta_{age} = 0.0578$ and $\beta_{age^2} = -0.000534$ for the complete dataset. For women, these values are similar, with $\beta_{age} = 0.0578$ and $\beta_{age^2} = -0.000534$, while for men they are greater in magnitude, with $\beta_{age} = 0.0629$ and $\beta_{age^2} = -0.000595$. The shape of the upside-down parabola implies a positive effect of age on self-employment until a maximum value is reached. For any value greater than this vertex, there is a negative effect of age on the probability of entry. 
+The coefficients on age describe a quadratic function with $\alpha <0 $, given $\beta_{age} = 0.0578$ and $\beta_{age^2} = -0.000534$ for the complete dataset. For women, these values are similar, with $\beta_{age} = 0.0578$ and $\beta_{age^2} = -0.000534$, while for men they are greater in magnitude, with $\beta_{age} = 0.0629$ and $\beta_{age^2} = -0.000595$. The shape of the concave-down parabola implies a positive effect of age on self-employment until a maximum value is reached. For any value greater than this vertex, there is a negative effect of age on the probability of entry. 
 
 \subsection{Immigrant Status}
 
@@ -58,20 +58,26 @@ Lifestyle changes vary in their power to incentivize business formation among me
     \caption{Magnitude of Significant Industry Coefficients by Gender} 
 \end{figure}
 
-Results also show consistent patterns of gender division across industries, with fields more traditionally occupied by men remaining prominent choices for new businesses for this group ( $\beta_{Data} = 0.967$, $\beta_{Software} = 1.259$ or $\beta_{0.891} = 0.967$). All the while, female self-employment is more positively incentivized by industries traditionally avoided by men, as indicated by $\beta_{Apparel} = 0.967$ or $\beta_{Accounting} = 1.575$.
+As illustrated by Figure 5.2, results also show consistent patterns of gender division across industries, with fields more traditionally occupied by men remaining prominent choices for new businesses for this group. The coefficients for men in tech industries are $\beta_{Data} = 0.967$, $\beta_{Software} = 1.259$ or $\beta_{Internet} = 0.967$. All the while, female self-employment is more positively incentivized by industries traditionally avoided by men, as indicated by $\beta_{Apparel} = 0.967$ or $\beta_{Accounting} = 1.575$ for the female sample.
 
-\section{Macroeconomic Conditions}
+It is important to note that both the male-dominated and female-dominated industries generate coefficients on men/women respectively that significantly surpass the values for the general sample. In that sense, the probit model for the data in the aggregate estimates an average effect of certain industries on probability of self-employment entry, one that misses the important asymmetries across genders. 
 
-Unemployment is a significant indicator of how local economic conditions affect self-employment rates, with negative coefficients $\beta_{unemployment} = -0.0113$ for women and $\beta_{unemployment} = -0.00514$ for men. Although of the same sign, these values are found to differ in magnitude at the $\alpha = 1\% $ significance level, women being less likely to start a business when there is a high unemployment rate in their respective state. 
+\section{Environment Variables}
 
 \begin{figure}[hbtp]
 	  \centering{%
 		  \includegraphics[width=1\linewidth]{ch-results/external.png}%
     	}%
-    \caption{Magnitude of Significant Coefficients for External Factors} 
+    \caption{Magnitude of Significant Coefficients for Environment Variables} 
 \end{figure}
 
-\section{Policy Climate}
+Figure 5.3 plots significant coefficients for the external factors thought to affect an agent's self-employment entry. Here, we note more pronounced effects of the gender split, with most covariates affecting men or women significantly, but not both groups. 
+
+\subsection{Economic Conditions}
+
+Unemployment is a significant indicator of how local economic conditions affect self-employment rates, with negative coefficients $\beta_{unemployment} = -0.0113$ for women and $\beta_{unemployment} = -0.00514$ for men. Although of the same sign, these values are found to differ in magnitude at the $\alpha = 1\% $ significance level, women being less likely to start a business when there is a high unemployment rate in their respective state. 
+
+\subsection{Policy Climate}
 Tax incentives for starting a business also show more significant responsiveness in the sample of female respondents, with  $\beta_{tax\_credit} = 0.0021$. For men, this coefficient is negative, $\beta_{tax\_credit} = -0.0131$, pointing to a reverse effect of tax credit on business formation. Instead of contributing to the likelihood of business formation, tax credits are estimated to have a negative effect for the male sample. This difference is significant at at the $\alpha = 1\% $ level. 
 
 The party affiliation of state governors is found to matter differently across gender groups. Having a republican governor has a significant negative effect on business formation for women, with $\beta_{rep\_gov} = -0.165$, while having a democratic governor seems to have a slight positive effect on women’s self-employment, with  $\beta_{rep\_gov} = 0.0017$. For the male sample, the effects are of opposite sign ($\beta_{rep\_gov} = 0.0775$ and $\beta_{rep\_gov} = -0.0103$), but not significant at the $\alpha = 5\% $ level. 
