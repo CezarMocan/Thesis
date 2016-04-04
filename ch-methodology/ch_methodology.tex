@@ -19,18 +19,21 @@ We are interested in estimating the probability of an individual switching into 
 \begin{dmath}
 \mbox{$Y^{*}_{i} = x^{T}_i\beta + u_i = \beta_0 + \beta_1X_{i1} + \beta_2X_{i2} + ... + \beta_kX_{ik} + u_i$}
 \end{dmath}
+\\
+in which:
 
-in which: \\
+$Y_i$ is a continuous variable for observation \textit{i}, that is latent or unobservable;
 
-$Y_i$ is a continuous variable for observation \textit{i}, that is latent or unobservable; \\
-$x^T_i$ is, a row vector of length \textit{k} with regressor values for each observation \textit{i}; \\ 
-$\beta$ is a column vector of length \textit{k} containing the regression coefficients; \\
-$x^T_i\beta$ is a term also known as the index function for observation \textit{i}; \\
-$U_i$ is the error term for observation \textit{i}, assumed to follow a normal distribution $N(0, \sigma^2)$. \\
+$x^T_i$ is, a row vector of length \textit{k} with regressor values for each observation \textit{i};
+
+$\beta$ is a column vector of length \textit{k} containing the regression coefficients;
+
+$x^T_i\beta$ is a term also known as the index function for observation \textit{i};
+
+$U_i$ is the error term for observation \textit{i}, assumed to follow a normal distribution $N(0, \sigma^2)$. 
+
 
 The outcomes for the binary choice problem (in our case, whether an individual opens a business or not) are represented by the indicator variable $Y_i$, mapping the unobserved dependent variable $Y^*_i$ as:
-
-
 
 \begin{dmath}
 \mbox{$Y_i = 1 \mbox{ if } Y^{*}_{i}>0$} \\
@@ -61,7 +64,7 @@ As a result, Probit estimates remain unbiased, and the cluster-robust error esti
 
 \section{Sparsity and Perfect Predictions}
 
-The Kauffman Index data gives average annual rates for the transition into self-employment of about 0.5\%. This is comparatively less than the estimates of 10\% of the U.S. population being self-employed at a given time\footnote{\cite{ChatterjiGlaeserKerr2014}}, as our data captures the switch, and not the total number of business owners. This is a legitimate choice for the dependent variable, but one that given the size of our dataset and categorical nature of most explanatory variables, can create a sparsity problem. The presence of sparsity could complicate the implementation of a probit model, with the optimizer reaching a concave region where convergence is not possible. The specification of a “difficult” maximization problem beforehand was used to prevent this issue, allowing for the use alternative stepping algorithms in nonconcave regions\footnote{\cite{GouldPitbladoPoi2010}}.
+The Kauffman Index data gives average annual rates for the transition into self-employment of about 0.5\%. This is comparatively less than the estimates of 10\% of the U.S. population being self-employed at a given time\footnote{\cite{ChatterjiGlaeserKerr2014}}, as our data captures the switch, and not the total number of business owners. This is a legitimate choice for the dependent variable, but one that given the size of our dataset and categorical nature of most explanatory variables, can create a sparsity problem. The presence of sparsity could complicate the implementation of a probit model, with the optimizer reaching a concave region where convergence is not possible. The specification of a ``difficult'' maximization problem beforehand was used to prevent this issue, allowing for the use alternative stepping algorithms in nonconcave regions\footnote{\cite{GouldPitbladoPoi2010}}.
 
 In probit regression, another foreseeable issue is for independent variables, especially when categorical in nature, to perfectly predict one outcome or the other. For our data, industry can become a perfect predictor when used as a categorical variable, with the possibility that for a given \textit{i},
 
@@ -69,11 +72,11 @@ In probit regression, another foreseeable issue is for independent variables, es
 Pr(Y = 0 | Ind_i = 1) = 1
 \end{dmath}
 
-This means that the probit coefficient on x must be minus infinity with a corresponding infinite standard error, an improbable estimation. One-way causations of this type were reported and the industry categorical variable \textit{i} eliminated from the regression model (Gould et al., 2010). 
+This means that the probit coefficient on x must be minus infinity with a corresponding infinite standard error, an improbable estimation. One-way causations of this type were reported and the industry categorical variable \textit{i} eliminated from the regression model\footnote{\cite{GouldPitbladoPoi2010}}. 
 
 \section{Evaluation of Results}
 
-In the Probit model, one unit change in X translates to a $\beta$ change in the z-score of Y\footnote{\cite{AldrichNelson1984}}. In interpreting this result, a positive coefficient on $X_i$ translates to an increase in the predicted probability of $Y_i$. A negative coefficient means the predicted probability of $Y_i$ decreases with an increase in $X_i$\footnote{\cite{AldrichNelson1984}}. Probit p-values show the significance of a parameter, this test statistic following a standard normal distribution. As an equivalent to the coefficient of determination found in OLS regression, Probit computes the McFadden's pseudo R-squared. The total sum of squares is equivalent to the log likelihood of the intercept model, while the residual sum of squares is the log likelihood of the full model. Although caution must be employed in the evaluation of results, this approach is in line with the R-squared as explained variability in OLS, and allows for a comparable interpretation of this statistic\footnote{\cite{Hilbe1996}}\hspace{.2em}\footnote{\cite{Long19974}}. 
+In the Probit model, one unit change in X translates to a $\beta$ change in the z-score of Y\footnote{\cite{AldrichNelson1984}}. In interpreting this result, a positive coefficient on $X_i$ translates to an increase in the predicted probability of $Y_i$. A negative coefficient means the predicted probability of $Y_i$ decreases with an increase in $X_i$\footnote{\cite{AldrichNelson1984}}. Probit p-values show the significance of a parameter, this test statistic following a standard normal distribution. As an equivalent to the coefficient of determination found in OLS regression, Probit computes the McFadden's pseudo R-squared. The total sum of squares is equivalent to the log likelihood of the intercept model, while the residual sum of squares is the log likelihood of the full model. Although caution must be employed in the evaluation of results, this approach is in line with the R-squared as explained variability in OLS, and allows for a comparable interpretation of this statistic\footnote{\cite{Hilbe1996}}\hspace{.2em}\footnote{\cite{Long1997}}. 
 
 \section{Differential effects}
 
@@ -89,7 +92,7 @@ Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3ed\_vers + \b
 
 \section{Variables and Expectations}
 
-A complete set of controls is provided in Table [...], along with relevant descriptions. The probability of entry is modeled using five categories of covariates that we hypothesize influence an agent's decision to start their own business. These are Liquidity constraints, Demographic controls, Job Characteristics, Policy Environment and Location variables. In light of existing literature and with intuitions about where our research can bring further contributions, we frame hypotheses for their effects and underlying mechanisms.
+A complete set of controls is provided in Table A.2 [Descriptive Statistics], along with relevant descriptions. The probability of entry is modeled using five categories of covariates that we hypothesize influence an agent's decision to start their own business. These are Liquidity constraints, Demographic controls, Job Characteristics, Policy Environment and Location variables. In light of existing literature and with intuitions about where our research can bring further contributions, we frame hypotheses for their effects and underlying mechanisms.
 
 \begin{figure}[hbtp]
 	    \centering{%
@@ -137,7 +140,7 @@ Household characteristics are expected to play a large role in one's motivations
 
 \textbf{Industry.} We record industry at survey time $t_0$ and $t_1$, with granularity for sub-sectors coded according to NAICS guidelines. Agriculture, mining and construction were dropped from the sample, our research being interested in self-employment initiatives in manufacturing and the services sector. We use categorical variables for major industries of interest, with an interest in observing whether women see self-employment as a way to break barriers in traditionally male-dominated fields (e.g. engineering, software development or financial services).
 
-Women are known to be underrepresented at the senior management level of companies, which only deters progress in the efforts for full gender integration (Olivetti and Petrongolo, 2016). These gaps are said to originate from “a limited pipeline of women in entry- and mid-level roles”, which is all the more prominent in male-heavy fields (Adams and Funk, 2012). As a result, we wonder whether self-employment can address this issue, allowing women to break into industries by starting their own companies. If coefficients for certain industries are positive and significant for this group at survey time $t_1$, data might point to a certain barrier-breaking mechanism associated with starting one's own business. 
+Women are known to be underrepresented at the senior management level of companies, which only deters progress in the efforts for full gender integration\footnote{\cite{olivetti2016dp11034}}. These gaps are said to originate from ``a limited pipeline of women in entry- and mid-level roles'', which is all the more prominent in male-heavy fields\footnote{\cite{adams2012beyond}}. As a result, we wonder whether self-employment can address this issue, allowing women to break into industries by starting their own companies. If coefficients for certain industries are positive and significant for this group at survey time $t_1$, data might point to a certain barrier-breaking mechanism associated with starting one's own business. 
 
 
 \textbf{Hours worked.} The $hours \geq 0$ worked by an agent at his main job are recorded at both survey times, with a binary variable for less hours following the transition from $se\_t_0 = 0$ to $se\_t_1 = 1$. We first test whether the hours worked at survey time $t_0$, conditioned $hours\_t_0 \geq 0$, contribute to the motivation to become self-employed. We are also interested whether starting a business is positively motivated by a greater degree of flexibility at work, as expressed by the coefficient on $less_hours$. 
