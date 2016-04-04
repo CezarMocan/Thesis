@@ -80,23 +80,25 @@ In the Probit model, one unit change in X translates to a $\beta$ change in the 
 
 \section{Differential effects}
 
-To test whether gender is associated with a difference in the determinants of entrepreneurship entry, we use an F-test of linear restrictions. In this case, we test whether the coefficients for men and women are significantly different from each other in a regression model with interaction terms for being male or female. For each covariate of interest, the null hypothesis is $H_0 : \beta_2 − \beta_1 = 0$ or, equivalently, $H_0 : \beta_2 = \beta_1$. Knowing the scale of an independent variable affects the size of its coefficient, it is important to note that the regressors corresponding to the coefficients tested are on the same scale. 
+To test whether gender is associated with a difference in the determinants of entrepreneurship entry, we use an F-test of linear restrictions. In this case, we test whether the coefficients for men and women are significantly different from each other in a regression model with interaction terms for being male or female. For each covariate of interest, the null hypothesis is $$H_0 : \beta_{2} − \beta_{1} = 0$$ or, equivalently, $$H_0 : \beta_2 = \beta_1.$$ Knowing the scale of an independent variable affects the size of its coefficient, it is important to note that the regressors corresponding to the coefficients tested are on the same scale. 
 
 
 \section{Model}
 
+We implement the probit method for three different models of entry probability, one addressing the dataset in the aggregate, and the other two focusing on the female and male samples. The first model (4.6) includes the covariate for gender, while the following two, (4.7) and (4.8) do not.
+
 
 \begin{dmath}
-Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3ed\_vers + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigr + \beta_8ed*immigr + \beta_9race + \beta_{10}mar\_stat + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}ind\_t_1 + \beta_{14}gdp_change + \beta_{15}unem + \beta_{16}gov\_party + \beta_{17}gov\_change + \beta_{18}region
+Y^{*}_{entry} = \beta_0 + \beta_1female + \beta2ed\_years + \beta_3skill\_vers + \beta_4log\_income + \beta_5age + \beta_6age^2 + \beta_7immigr + \beta_8ed*immigr + \beta_9race + \beta_{10}mar\_stat + \beta_{11}hours\_t_0 + \beta_{12}less\_hours\_t_1 + \beta_{13}ind\_t_1 + \beta_{14}gdp\_change + \beta_{15}ed*gdp\_change + \beta_{16}unem + \beta_{17}unem\_rate + \beta_{18}gov\_party + \beta_{19}gov\_change + \beta_{20}region
 \end{dmath}
 
 
 \begin{dmath}
-Y^{*}_{entry\_f} = \beta_0 + \beta3ed\_years + \beta_4ed\_vers + \beta_5log\_income + \beta_6age + \beta_7age^2 + \beta_8immigr + \beta_9ed*immigr + \beta_10race + \beta_{11}mar\_stat + \beta_{12}hours\_t_0 + \beta_{13}less\_hours\_t_1 + \beta_{14}ind\_t_1 + \beta_{15}gdp_change + \beta_{16}unem + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
+Y^{*}_{entry\_f} = \beta_0 + \beta1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change +\beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
 \end{dmath}
 
 \begin{dmath}
-Y^{*}_{entry\_m} = \beta_0 + \beta3ed\_years + \beta_4ed\_vers + \beta_5log\_income + \beta_6age + \beta_7age^2 + \beta_8immigr + \beta_9ed*immigr + \beta_10race + \beta_{11}mar\_stat + \beta_{12}hours\_t_0 + \beta_{13}less\_hours\_t_1 + \beta_{14}ind\_t_1 + \beta_{15}gdp_change + \beta_{16}unem + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
+Y^{*}_{entry\_m} = \beta_0 + \beta_1ed\_years + \beta_2skill\_vers + \beta_3log\_income + \beta_4age + \beta_5age^2 + \beta_6immigr + \beta_7ed*immigr + \beta_8race + \beta_{9}mar\_stat + \beta_{10}hours\_t_0 + \beta_{11}less\_hours\_t_1 + \beta_{12}ind\_t_1 + \beta_{13}gdp_change + \beta_{14}ed*gdp\_change + \beta_{15}unem + \beta_{16}unem\_rate + \beta_{17}gov\_party + \beta_{18}gov\_change + \beta_{19}region
 \end{dmath}
 
 \section{Variables and Expectations}
