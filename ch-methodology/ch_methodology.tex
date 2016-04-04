@@ -96,7 +96,7 @@ This means that the probit coefficient on x must be minus infinity with a corres
 
 In the Probit model, one unit change in X translates to a $\beta$ change in the z-score of Y\footnote{\cite{AldrichNelson1984}}. In interpreting this result, a positive coefficient on $X_i$ translates to an increase in the predicted probability of $Y_i$. A negative coefficient means the predicted probability of $Y_i$ decreases with an increase in $X_i$\footnote{\cite{AldrichNelson1984}}. Probit p-values show the significance of a parameter, this test statistic following a standard normal distribution. As an equivalent to the coefficient of determination found in OLS regression, Probit computes the McFadden's pseudo R-squared. The total sum of squares is equivalent to the log likelihood of the intercept model, while the residual sum of squares is the log likelihood of the full model. Although caution must be employed in the evaluation of results, this approach is in line with the R-squared as explained variability in OLS, and allows for a comparable interpretation of this statistic\footnote{\cite{Hilbe1996}}\hspace{.2em}\footnote{\cite{Long1997}}. 
 
-\section{Differential effects}
+\section{Differential Effects}
 
 To test whether gender is associated with a difference in the determinants of entrepreneurship entry, we use an F-test of linear restrictions. In this case, we test whether the coefficients for men and women are significantly different from each other in a regression model with interaction terms for being male or female. For each covariate of interest, the null hypothesis is $$H_0 : \beta_{2} - \beta_{1} = 0$$ or, equivalently, $$H_0 : \beta_2 = \beta_1.$$ Knowing the scale of an independent variable affects the size of its coefficient, it is important to note that the regressors corresponding to the coefficients tested are on the same scale. 
 
@@ -123,7 +123,7 @@ The probability of becoming an entrepreneur $p_{entry}$ is estimated for each in
 
 
 
-\subsection{Individual-level variables}
+\subsection{Individual-Level Variables}
 
 \textbf{Liquidity Constraints.} Availability of capital ($log\_income$) is measured as the natural logarithm of an individual's family income at survey time $t_0$. Higher levels of liquidity are expected to lead to a higher likelihood of self-employment $p_{entry}$, and we are interested in how this effect varies across genders. We expect positive coefficients for both men and women, and given literature, suspect men to be more responsive to family income. 
 
