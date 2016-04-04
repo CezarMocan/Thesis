@@ -134,9 +134,21 @@
   \begin{center}
   \Large \textbf{Abstract}
   \end{center}
-  \singlespacing \@abstract \bodyspacing
+  \@abstract
   \clearpage
   }
+  
+\newcommand*{\makehonorcodepage}{
+  \thispagestyle{empty}
+  \vspace*{0in}
+  \begin{center}
+    A B and C decided to have a threesome. \\
+    All rights reserved.
+  \end{center}
+  \clearpage
+}
+
+
 \DeclareOption{los}{
   \renewcommand*{\makelos}{
     \RequirePackage{losymbol}
