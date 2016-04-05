@@ -87,7 +87,7 @@
   \thispagestyle{empty}
   \vspace*{0in}
   \begin{center}
-    \LARGE \sc \@title
+    \Large \sc \@title
   \end{center}
   \vspace{1.7in}
   \extravspace{0.6in}
