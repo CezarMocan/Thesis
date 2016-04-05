@@ -71,7 +71,7 @@
 %%   to be declared from within the document itself. 
 \newcommand*{\makefrontmatter}{
 \bodyspacing
-\frontmatter\maketitlepage\makecopyrightpage
+\frontmatter\maketitlepage
 \makededication\makeacknowledgements\makeabstract\maketoc
 \makelot\clearpage\makelof\clearpage\makelos
 \clearpage\mainmatter
